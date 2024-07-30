@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래식 곡 추천</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="page_icon.png">
+</head>
+<body>
+    <section class="top">
+        <img src="mozart.PNG" alt="모짜르트" class="composerpic">
+
+        <form id="orchestraForm">
+            <label for="instrument">주요 악기:</label>
+            <input type="text" id="instrument" required>
+    
+            <label for="compositionType">곡의 형식:</label>
+            <select id="compositionType" required>
+                <option value="상관없음">상관없음</option>
+                <option value="솔로곡">솔로곡</option>
+                <option value="협주곡">협주곡</option>
+                <option value="교향곡">교향곡</option>
+                <option value="실내악">실내악</option>
+                <option value="관현악곡">관현악곡</option>
+            </select>
+    
+            <div id="sizeContainer" style="display: none;">
+                <label for="size">오케스트라 규모:</label>
+                <select id="size">
+                    <option value="small">소규모 (20-40명)</option>
+                    <option value="medium">중규모 (40-60명)</option>
+                    <option value="large">대규모 (60명 이상)</option>
+                </select>
+            </div>
+    
+            <label for="difficulty">난이도:</label>
+            <select id="difficulty" required>
+                <option value="상관없음">상관없음</option>
+                <option value="초급">초급</option>
+                <option value="중급">중급</option>
+                <option value="고급">고급</option>
+            </select>
+    
+            <label for="preferredComposer">선호하는 작곡가 (선택사항):</label>
+            <input type="text" id="preferredComposer">
+    
+            <button type="submit">추천 받기</button>
+        </form>
+        <img src="beethoven.PNG" alt="베토벤" class="composerpic">
+    </section>
+    
+
+    <div id="loadingBox" style="display: none;">
+        <div class="spinner"></div>
+        <p>추천 곡을 찾고 있습니다...</p>
+    </div>
+
+    <ul id="recommendationList"></ul>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
