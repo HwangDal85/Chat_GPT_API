@@ -26,7 +26,7 @@ let data = [
  */
 $compositionTypeSelect.addEventListener("change", (e) => {
     const selectedType = e.target.value;
-    if (["교향곡", "관현악곡", "협주곡"].includes(selectedType)) {
+    if (["교향곡"].includes(selectedType)) {
         $sizeContainer.style.display = "block";
         $sizeSelect.required = true;
     } else {
@@ -157,3 +157,12 @@ function displayRecommendations(answer) {
         }
     });
 }
+
+document.addEventListener("scroll", function() {
+    const header = document.querySelector(".header");
+    if (window.scrollY > 50) { // 스크롤 위치가 50px 이상이면
+        header.classList.add("transparent");
+    } else {
+        header.classList.remove("transparent");
+    }
+});
