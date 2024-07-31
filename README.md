@@ -12,7 +12,7 @@
  파일 구성은 다음과 같다
 Chat_GPT_API/\
 ├── images/ # 페이지에서 사용될 이미지파일 디렉토리\
-│ ├── htmlpage.png # 프로젝트 썸네일
+│ ├── htmlpage.png # 프로젝트 썸네일\
 │ ├── beethoven.png, mozart.png # 작곡가 이미지\
 │ └── logo-ver2.png, page-icon.png # 페이지 로고 및 파비콘 이미지\
 ├── index.html # 메인 페이지\
