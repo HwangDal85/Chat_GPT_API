@@ -1,3 +1,4 @@
+// DOM 요소를 선택합니다.
 const $form = document.querySelector("#orchestraForm");
 const $instrumentInput = document.querySelector("#instrument");
 const $compositionTypeSelect = document.querySelector("#compositionType");
@@ -8,11 +9,10 @@ const $preferredComposerInput = document.querySelector("#preferredComposer");
 const $recommendationList = document.querySelector("#recommendationList");
 const $loadingBox = document.querySelector("#loadingBox");
 
-
-// openAI API
+// OpenAI API의 URL을 설정합니다.
 const url = `https://open-api.jejucodingcamp.workers.dev/`;
 
-// 질문과 답변 저장
+// 질문과 답변을 저장할 배열을 초기화합니다.
 let data = [
     {
         role: "system",
@@ -22,7 +22,7 @@ let data = [
 
 /**
  * 곡의 형식에 따라 오케스트라 규모 선택 옵션을 표시하거나 숨깁니다.
- * 교향곡, 관현악곡, 협주곡의 경우에만 규모 선택 옵션을 표시.
+ * 교향곡, 관현악곡, 협주곡의 경우에만 규모 선택 옵션을 표시합니다.
  */
 $compositionTypeSelect.addEventListener("change", (e) => {
     const selectedType = e.target.value;
@@ -46,20 +46,20 @@ $form.addEventListener("submit", async (e) => {
     $recommendationList.innerHTML = "";
     $loadingBox.style.display = "block";
 
+    // 사용자 입력값을 가져옵니다.
     const instrument = $instrumentInput.value.trim();
     const compositionType = $compositionTypeSelect.value;
     const size = $sizeSelect.value;
     const difficulty = $difficultySelect.value;
     const preferredComposer = $preferredComposerInput.value.trim();
 
-    // 사용자의 질문
+    // 사용자의 질문을 구성합니다.
     let question = `주요 악기가 ${instrument}이고, ${compositionType} 형식이며, ${difficulty} 난이도인 작곡가와 곡을 5개 추천해주세요.`;
 
     if (["교향곡", "관현악곡", "협주곡"].includes(compositionType)) {
         question += ` 또한, ${size} 규모의 오케스트라에 적합한 곡들을 추천해주세요.`;
     }
 
-    // 선호하는 작곡가가 있다면
     if (preferredComposer) {
         question += ` 가능하다면 ${preferredComposer}의 작품을 포함해주세요.`;
     }
@@ -75,12 +75,14 @@ $form.addEventListener("submit", async (e) => {
     작곡가: [작곡가 이름]
     ...`;
 
+    // 질문을 데이터 배열에 추가합니다.
     data.push({
         role: "user",
         content: question,
     });
 
     try {
+        // API에 요청을 보냅니다.
         const response = await fetch(url, {
             method: "POST",
             headers: {
@@ -90,6 +92,7 @@ $form.addEventListener("submit", async (e) => {
             redirect: "follow",
         });
 
+        // API 응답을 JSON으로 파싱합니다.
         const result = await response.json();
 
         // API 응답을 안전하게 처리합니다.
@@ -103,12 +106,14 @@ $form.addEventListener("submit", async (e) => {
             throw new Error("API 응답 형식이 올바르지 않습니다.");
         }
     } catch (err) {
+        // 에러를 콘솔에 출력하고 사용자에게 알립니다.
         console.error("Error:", err);
         alert("추천을 가져오는 데 문제가 발생했습니다. 다시 시도해주세요.");
         // 에러 발생 시에도 로딩 박스를 숨깁니다.
         $loadingBox.style.display = "none";
     }
 
+    // 폼을 초기화하고 규모 선택 옵션을 숨깁니다.
     $form.reset();
     $sizeContainer.style.display = "none";
 });
@@ -128,6 +133,7 @@ function displayRecommendations(answer) {
             const piece = lines[0].replace("곡명: ", "").trim();
             const description = lines[2].replace("설명: ", "").trim();
 
+            // 추천 항목을 생성합니다.
             const li = document.createElement("li");
             
             const pieceElement = document.createElement("div");
@@ -148,6 +154,7 @@ function displayRecommendations(answer) {
             youtubeLink.textContent = "YouTube에서 검색";
             youtubeLink.target = "_blank";
 
+            // 추천 항목을 리스트에 추가합니다.
             li.appendChild(pieceElement);
             li.appendChild(composerElement);
             li.appendChild(descriptionElement);
@@ -158,6 +165,7 @@ function displayRecommendations(answer) {
     });
 }
 
+// 스크롤 이벤트를 처리하여 헤더의 투명도를 조정합니다.
 document.addEventListener("scroll", function() {
     const header = document.querySelector(".header");
     if (window.scrollY > 50) { // 스크롤 위치가 50px 이상이면
