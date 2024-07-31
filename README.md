@@ -1,4 +1,4 @@
-![HTML Page Preview](./images/htmlpage.png)
+![HTML Page Preview](HwangDal85/Chat_GPT_API/images/htmlpage.PNG)
 
 # Chat_GPT_API
  모두의 연구소 Django 백엔드 부트캠프 프로젝트 첫번째 - "HTML/CSS JavaScript를 이용하여 ChatGPT API를 이용한 페이지를 만들어 보자"는 과제를 수행한다.
