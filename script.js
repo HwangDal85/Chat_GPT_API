@@ -8,6 +8,8 @@ const $difficultySelect = document.querySelector("#difficulty");
 const $preferredComposerInput = document.querySelector("#preferredComposer");
 const $recommendationList = document.querySelector("#recommendationList");
 const $loadingBox = document.querySelector("#loadingBox");
+const $questionBox = document.querySelector("#questionBox");
+const $userQuestion = document.querySelector("#userQuestion");
 
 // OpenAI API의 URL을 설정합니다.
 const url = `https://open-api.jejucodingcamp.workers.dev/`;
@@ -80,6 +82,13 @@ $form.addEventListener("submit", async (e) => {
         role: "user",
         content: question,
     });
+
+    // 사용자 질문을 표시합니다.
+    $userQuestion.textContent = `찾는 악기 : ${instrument} / 곡의 형식 : ${compositionType} / 곡의 난이도 : ${difficulty}`;
+    if (preferredComposer) {
+            $userQuestion.textContent = `찾는 악기 : ${instrument} / 곡의 형식 : ${compositionType} / 곡의 난이도 : ${difficulty} / 선호 작곡가 : ${preferredComposer}`;
+    }
+    $questionBox.style.display = "block";
 
     try {
         // API에 요청을 보냅니다.

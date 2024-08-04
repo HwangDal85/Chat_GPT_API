@@ -33,9 +33,7 @@ body {
     z-index: 1000;
     background-color: black;
     transition: background-color 0.3s ease;
-    text-shadow: 1px black;
 }
-
 header h1 {
     text-shadow: 
         -1px -1px 0 black,
@@ -168,6 +166,14 @@ li {
     height: 40px;
     animation: spin 1s linear infinite;
     margin: 0 auto 15px;
+}
+
+.questionbox {
+    background-color: #ff7300f5;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 @keyframes spin {

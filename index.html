@@ -30,14 +30,14 @@
                 <option value="실내악">실내악</option>
             </select>
     
-            <div id="sizeContainer" style="display: none;">
+            <section id="sizeContainer" style="display: none;">
                 <label for="size">오케스트라 규모:</label>
                 <select id="size">
                     <option value="small">소규모 (20-40명)</option>
                     <option value="medium">중규모 (40-60명)</option>
                     <option value="large">대규모 (60명 이상)</option>
                 </select>
-            </div>
+            </section>
     
             <label for="difficulty">난이도:</label>
             <select id="difficulty" required>
@@ -54,16 +54,20 @@
         </form>
         <img src="./images/beethoven.PNG" alt="베토벤" class="composerpic">
     </section>
-    
 
-    <div id="loadingBox" style="display: none;">
+    <section id="questionBox" style="display: none;" class="questionbox">
+        <p id="userQuestion"></p>
+    </section>
+    
+    <section id="loadingBox" style="display: none;">
         <div class="spinner"></div>
         <p>추천 곡을 찾고 있습니다...</p>
-    </div>
+    </section>
+
+
 
     <ul id="recommendationList"></ul>
     
-
     <script src="script.js"></script>
 </body>
 </html>
