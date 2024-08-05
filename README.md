@@ -1,4 +1,4 @@
-![HTML Page Preview](/images/htmlpage.PNG)
+![HTML Page Preview](/images/htmlpage.PNG)\
 [해당 페이지로 이동](https://hwangdal85.github.io/Chat_GPT_API/)
 
 # Chat_GPT_API
