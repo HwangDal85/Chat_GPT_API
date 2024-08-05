@@ -23,6 +23,9 @@ Chat_GPT_API/\
 ## 3. 프로젝트 세부내용
 
 ![Wireframe](/images/wireframe.PNG)
+#### 시연영상
+![Preview](/images/findsongs3.gif)
+
 
  페이지 화면엔 총 4개의 입력란이 있다. 굵은 글씨는 필수적인 입력사항이다.
  - __주요 악기__ : 추천받고 싶은 곡의 주선율 등을 연주하는 악기를 정한다.
