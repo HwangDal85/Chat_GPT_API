@@ -2,7 +2,6 @@
 [해당 페이지로 이동](https://hwangdal85.github.io/Chat_GPT_API/)
 
 # Chat_GPT_API
- ---
 ## 1. 프로젝트 개요
 ### 1.1 프로젝트 목적
  본 프로젝트는 HTML/CSS, JavaScript, GitHub 사용 능력 증진과 ChatGPT API 연동 기술을 시험해보는 목적을 가졌다. 이에 제작자는 ChatGPT를 통해 악기별 클래식 곡 추천을 받아보는 것을 목표로 결정하였다.\
