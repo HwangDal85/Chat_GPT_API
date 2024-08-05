@@ -10,15 +10,17 @@
 ## 2. 프로젝트 파일 구성
  파일 구성은 다음과 같다\
 Chat_GPT_API/\
-├── images/ # 페이지에서 사용될 이미지파일 디렉토리\
-│ ├── htmlpage.png # 프로젝트 썸네일\
-│ ├── beethoven.png, mozart.png # 작곡가 이미지\
-│ └── logo-ver2.png, page-icon.png # 페이지 로고 및 파비콘 이미지\
-├── index.html # 메인 페이지\
-├── script.js # 페이지에서 작동할 js코드\
-├── style.css # 페이지 스타일 css코드\
+├── images/ \
+│ ├── htmlpage.png \
+│ ├── findsongs3.gif # 시연 이미지 \
+│ ├── wireframe.png\
+│ ├── beethoven.png, mozart.png \
+│ └── logo-ver2.png, page-icon.png\
+├── index.html \
+├── script.js \
+├── style.css \
 ├── LINESeedKR-Rg.woff2 # 페이지 사용될 폰트\
-└── README.md # 프로젝트 개요 및 설명
+└── README.md 
 
 ## 3. 프로젝트 세부내용
 
