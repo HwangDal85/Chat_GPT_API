@@ -2,7 +2,6 @@
 [해당 페이지로 이동](https://hwangdal85.github.io/Chat_GPT_API/)
 
 # Chat_GPT_API
- 모두의 연구소 Django 백엔드 부트캠프 프로젝트 첫번째 - "HTML/CSS JavaScript를 이용하여 ChatGPT API를 이용한 페이지를 만들어 보자"는 과제를 수행한다.
  ---
 ## 1. 프로젝트 개요
 ### 1.1 프로젝트 목적
